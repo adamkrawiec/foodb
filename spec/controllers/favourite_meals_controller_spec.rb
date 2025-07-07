@@ -22,7 +22,6 @@ RSpec.describe FavouriteMealsController, type: :controller do
   end
 
   before do
-    @request.env['devise.mapping'] = Devise.mappings[:user]
     sign_in user
   end
 

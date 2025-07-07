@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe BookmarksController, type: :controller do
-  set_devise_mapping
   let!(:user) { create(:user) }
 
   let!(:meal) do
