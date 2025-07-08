@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-12">
+    <ul class="list-unstyled">
+      <% @favourite_meals.each do |favouirte_meal| %>
+        <li class="mb-2">
+          <h4><%= favouirte_meal.meal.name %></h4>
+          <p><%= favouirte_meal.meal.description %></p>
+          <button
+            data-controller="bookmark"
+            data-action="click->bookmark#unbookmark"
+            data-meal-id="<%= favouirte_meal.id %>"
+            class="bookmark-button"
+          >
+            Remove from favourites
+          </button>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
