@@ -17,7 +17,7 @@
               <p>
                 <%= meal.description %>
               </p>
-              <% unless @bookmarks.find { _1.meal_id == meal.id } %>
+              <% if current_user && @bookmarks.find { _1.meal_id == meal.id }.nil? %>
                 <button
                   data-controller="bookmark"
                   data-action="click->bookmark#bookmark"

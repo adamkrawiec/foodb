@@ -37,10 +37,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
-  # config.include Devise::Test::IntegrationHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :controller
-  config.extend Controllers::DeviseHelpers, type: :controller
-
 
   config.before(:each, type: :controller) do
     Rails.application.try(:reload_routes_unless_loaded)
